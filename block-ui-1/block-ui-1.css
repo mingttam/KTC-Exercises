@@ -1,0 +1,168 @@
+
+*{ 
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+   }
+body{
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+}
+.progress-wrapper {
+    display: flex;
+    justify-content: center;
+    margin: 15px 300px;
+    min-width: 300px;
+   
+}
+.progress-bar {
+    flex: 1;
+    background-color: #f1f1f1;
+    height: 40px;
+    position: relative;
+    box-shadow: 0 0 5px rgba(0,0,0,0);
+  }
+
+  p { color: white;
+    padding:10px 0px 10px 15px;
+    }
+
+/* bandwidth */
+
+.bandwidth-label{
+    background-color: #E54D4C;
+    
+    padding: 10px 15px;
+
+}
+.bandwidth-label{
+    text-align: center;
+    width: 100px;
+}
+
+.bandwidth-fill {
+    background-color: #f44336;
+    height: 100%;
+  }
+
+  /* storage */
+
+.storage-label{
+    background-color: #2DB8CD;
+    color: white;
+    padding: 10px 15px;
+
+}
+.storage-label{
+    text-align: center;
+    width: 100px;
+}
+
+.storage-fill {
+    background-color: #31C8DD;
+    height: 100%;
+   
+  }
+
+    /* USERS */
+
+.users-label{
+    background-color: #4AC25E;
+    color: white;
+    padding: 10px 15px;
+
+}
+.users-label{
+    text-align: center;
+    width: 100px;
+}
+
+
+.users-fill {
+    background-color: #51D567;
+    height: 100%;
+   
+  }
+
+      /* VISITORS */
+
+.visitors-label{
+    background-color: #E9C318;
+    color: white;
+    padding: 10px 15px;
+
+}
+.visitors-label{
+    text-align: center;
+    width: 100px;
+}
+
+
+.visitors-fill {
+    background-color: #FCD518;
+    height: 100%;
+    
+  }
+
+  
+      /* EMAILS */
+
+.emails-label{
+    background-color: #BB70D5;
+    color: white;
+    padding: 10px 15px;
+
+}
+.emails-label{
+    text-align: center;
+    width: 100px;
+}
+
+
+.emails-fill {
+    background-color: #CB79E7;
+    height: 100%;
+    
+  }
+
+   
+      /* BASIC */
+
+.basic-label{
+    background-color: #EB59D6;
+    color: white;
+    padding: 10px 15px;
+
+}
+.basic-label{
+    text-align: center;
+    width: 100px;
+}
+
+.basic-fill {
+    background-color: #FE60E8;
+    height: 100%;
+    
+  }
+    
+      /* OTHERS */
+
+.others-label{
+    background-color: #528FDA;
+    color: white;
+    padding: 10px 15px;
+
+}
+.others-label{
+    text-align: center;
+    width: 100px;
+}
+
+
+.others-fill {
+    background-color: #619BEC;
+    height: 100%;
+    
+  }

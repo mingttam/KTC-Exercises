@@ -1,0 +1,37 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    font-family: 'Montserrat', sans-serif;
+}
+
+div{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 40px;
+    color: white;
+    flex: 1 1 150px;
+    max-width: 200px;
+}
+
+
+.home { background-color: #31C8DD; }
+.about { background-color: #F75354; }
+.feature { background-color: #51D567; }
+.service { background-color: #FCD518; }
+.gallery { background-color: #F78153; }
+.blog { background-color: #FE60E8; }
+

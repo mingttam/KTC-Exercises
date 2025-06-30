@@ -1,0 +1,64 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+body {
+    font-family: 'Montserrat', sans-serif;
+      background: #fff;
+      padding: 40px;
+      display: flex;
+      justify-content: center;
+  }
+
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    max-width: 1000px;
+    width: 100%;
+  }
+  .card {
+    flex: 1 1 200px;
+    min-width: 200px;
+    max-width: 220px;
+    height: 250px;
+    padding: 20px;
+    color: white;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  .facebook {
+    background-color: #3b5998;
+  }
+
+  .twitter {
+    background-color: #00aced;
+  }
+
+  .google {
+    background-color: #dd4b39;
+  }
+
+  .pinterest {
+    background-color: #cb2027;
+  }
+
+  .icon {
+    font-size: 40px;
+    margin-bottom: 100px;
+  }
+
+  .label {
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  .count {
+    font-size: 16px;
+  }
