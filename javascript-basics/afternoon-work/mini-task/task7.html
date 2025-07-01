@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div class="container">
+        <button class="colorBtn">Context 1</button>
+        <button class="colorBtn">Context 2</button>
+        <button class="colorBtn">Context 3</button>
+        <button class="colorBtn">Context 4</button>
+        <button class="colorBtn">Context 5</button>
+    </div>
+
+    <script>
+        function submit() {
+            let button = document.querySelectorAll(".colorBtn");
+            for(let btn of button){
+            btn.addEventListener('click', () => {
+                let context =  btn.innerText;
+                alert(context)
+                })
+            }
+        }
+            submit();
+    </script>
+</body>
+</html>

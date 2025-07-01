@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div class="container">
+        <div class="hoverBox" style="padding: 30px; width: 100px;border: 1px solid black;text-align: center;">Hover Here</div>
+    </div>
+
+    <script>
+        function hoverBtn() {
+            let button = document.querySelector(".hoverBox");
+            button.addEventListener('mouseover', () => {
+                button.style.backgroundColor = 'Blue';
+            })
+            button.addEventListener('mouseout', () => {
+                button.style.backgroundColor = '';
+            })
+        }
+        hoverBtn();
+    </script>
+</body>
+</html>

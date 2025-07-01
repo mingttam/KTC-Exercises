@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .thumbnail {
+            width: 100px;
+            height: 100px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        #mainPhoto {
+            width: 450px;
+            height: 450px;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <img id="mainPhoto" src="https://www.washingtonpost.com/wp-apps/imrs.php?src=https://arc-anglerfish-washpost-prod-washpost.s3.amazonaws.com/public/LD7WEPSAP7XPVEERGVIKMYX24Q.JPG&w=1800&h=1800" alt="Main display">
+    </div>
+    <div>
+        <img class="thumbnail" src="https://www.washingtonpost.com/wp-apps/imrs.php?src=https://arc-anglerfish-washpost-prod-washpost.s3.amazonaws.com/public/LD7WEPSAP7XPVEERGVIKMYX24Q.JPG&w=1800&h=1800" alt="Thumbnail 1">
+        <img class="thumbnail" src="https://www.calendarclub.ca/cdn/shop/files/BA052332-F47B-4464-85E1-530442D78978_f419ef5c-8d6f-42b4-8530-707dea4eeb5b.jpg?v=1728320421" alt="Thumbnail 2">
+        <img class="thumbnail" src="https://i.redd.it/zj7m5n0a2xx91.jpg" alt="Thumbnail 3">
+        <img class="thumbnail" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxtlNzdK26NDXdjVBPQpabS0aJtF2fNYrNqA&s" alt="Thumbnail 4">
+    </div>
+
+    <script>
+        function setupImageGallery() {
+            const thumbnails = document.querySelectorAll('.thumbnail');
+            const mainPhoto = document.getElementById('mainPhoto');
+
+            thumbnails.forEach(thumbnail => {
+                thumbnail.addEventListener('click', () => {
+
+                    mainPhoto.src = thumbnail.src.replace('100', '400');
+                });
+            });
+        }
+        setupImageGallery();
+    </script>
+</body>
+</html>

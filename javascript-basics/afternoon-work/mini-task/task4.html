@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div class="container">
+        <ul id="itemList">
+            <li>item 1<button class="deleteBtn">Del</button></li>
+            <li>item 2<button class="deleteBtn">Del</button></li>
+            <li>item 1<button class="deleteBtn">Del</button></li>
+            <li>item 2<button class="deleteBtn">Del</button></li>
+            <li>item 1<button class="deleteBtn">Del</button></li>
+            <li>item 2<button class="deleteBtn">Del</button></li>
+        </ul>
+    </div>
+
+    <script>
+        function removeItem() {
+            let button = document.querySelectorAll(".deleteBtn");
+            let list = document.getElementById("itemList");
+            for (let btn of button) {
+                btn.addEventListener('click', () => {
+                let listItem = btn.parentElement;
+                list.removeChild(listItem);
+                });
+            }
+        
+        }
+
+        removeItem();
+    </script>
+</body>
+</html>

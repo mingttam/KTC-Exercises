@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+    <div class="header">
+        <div class="clock-section">
+            <div id="clock"></div>
+            <div id="greeting"></div>
+        </div>
+        <button id="themeToggle">☀️</button>
+    </div>
+
+    <div class="section">
+        <h2>Todo List</h2>
+        <div class="input-group">
+            <input type="text" id="todoInput" placeholder="Add a new task...">
+            <button onclick="addTodo()">Add</button>
+        </div>
+        <div class="error" id="todoError">Please enter a task</div>
+        
+        <div class="filter-buttons">
+            <button onclick="filterTodos('all')">All</button>
+            <button onclick="filterTodos('completed')">Completed</button>
+            <button onclick="filterTodos('incomplete')">Incomplete</button>
+        </div>
+        
+        <ul id="todoList" class="todo-list"></ul>
+    </div>
+
+    <div class="section">
+        <h2>Sticky Notes</h2>
+        <div class="input-group">
+            <input type="text" id="noteInput" placeholder="Add a new note...">
+            <button onclick="addNote()">Add</button>
+        </div>
+        <div class="error" id="noteError">Please enter a note</div>
+        
+        <div id="notesContainer" class="notes-container"></div>
+    </div>
+
+    <script src="dashboard.js"></script>
+</body>
+</html>

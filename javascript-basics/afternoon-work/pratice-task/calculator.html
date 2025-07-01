@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iOS Calculator</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: black;
+        }
+
+        .calculator {
+            width: 100%;
+            max-width: 400px;
+            padding: 20px;
+        }
+
+        .display {
+            background-color: #000;
+            color: white;
+            font-size: 64px;
+            text-align: right;
+            padding: 20px;
+            min-height: 120px;
+            margin-bottom: 10px;
+            font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+
+        .buttons {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+        }
+
+        button {
+            border: none;
+            border-radius: 50%;
+            font-size: 32px;
+            height: 80px;
+            color: white;
+            cursor: pointer;
+            font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+
+        .number {
+            background-color: #333333;
+        }
+
+        .operator {
+            background-color: #ff9f0a;
+        }
+
+        .special {
+            background-color: #a5a5a5;
+            color: black;
+        }
+
+        .zero {
+            grid-column: span 2;
+            border-radius: 40px;
+            text-align: left;
+            padding-left: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="calculator">
+        <div class="display">0</div>
+        <div class="buttons">
+            <button class="special">AC</button>
+            <button class="special">±</button>
+            <button class="special">%</button>
+            <button class="operator">÷</button>
+            <button class="number">7</button>
+            <button class="number">8</button>
+            <button class="number">9</button>
+            <button class="operator">×</button>
+            <button class="number">4</button>
+            <button class="number">5</button>
+            <button class="number">6</button>
+            <button class="operator">−</button>
+            <button class="number">1</button>
+            <button class="number">2</button>
+            <button class="number">3</button>
+            <button class="operator">+</button>
+            <button class="number zero">0</button>
+            <button class="number">.</button>
+            <button class="operator">=</button>
+        </div>
+    </div>
+
+    <script>
+        let displayValue = '0';
+        let firstOperand = null;
+        let operator = null;
+        let waitingForSecondOperand = false;
+
+        const display = document.querySelector('.display');
+        const buttons = document.querySelector('.buttons');
+
+        function updateDisplay() {
+            display.textContent = displayValue;
+        }
+
+        function inputDigit(digit) {
+            if (waitingForSecondOperand) {
+                displayValue = digit;
+                waitingForSecondOperand = false;
+            } else {
+                displayValue = displayValue === '0' ? digit : displayValue + digit;
+            }
+            updateDisplay();
+        }
+
+        function inputDecimal() {
+            if (waitingForSecondOperand) {
+                displayValue = '0.';
+                waitingForSecondOperand = false;
+                return;
+            }
+            if (!displayValue.includes('.')) {
+                displayValue += '.';
+            }
+            updateDisplay();
+        }
+
+        function handleOperator(nextOperator) {
+            const inputValue = parseFloat(displayValue);
+
+            if (operator && waitingForSecondOperand) {
+                operator = nextOperator;
+                return;
+            }
+
+            if (firstOperand === null) {
+                firstOperand = inputValue;
+            } else if (operator) {
+                const result = calculate(firstOperand, inputValue, operator);
+                displayValue = `${parseFloat(result.toFixed(7))}`;
+                firstOperand = result;
+            }
+
+            waitingForSecondOperand = true;
+            operator = nextOperator;
+            updateDisplay();
+        }
+
+        function calculate(first, second, op) {
+            switch (op) {
+                case '+':
+                    return first + second;
+                case '−':
+                    return first - second;
+                case '×':
+                    return first * second;
+                case '÷':
+                    return first / second;
+                default:
+                    return second;
+            }
+        }
+
+        function resetCalculator() {
+            displayValue = '0';
+            firstOperand = null;
+            operator = null;
+            waitingForSecondOperand = false;
+            updateDisplay();
+        }
+
+        function toggleSign() {
+            displayValue = (parseFloat(displayValue) * -1).toString();
+            updateDisplay();
+        }
+
+        function percentage() {
+            displayValue = (parseFloat(displayValue) / 100).toString();
+            updateDisplay();
+        }
+
+        buttons.addEventListener('click', (event) => {
+            if (!event.target.matches('button')) return;
+
+            if (event.target.classList.contains('number')) {
+                if (event.target.textContent === '.') {
+                    inputDecimal();
+                } else {
+                    inputDigit(event.target.textContent);
+                }
+                return;
+            }
+
+            if (event.target.classList.contains('operator')) {
+                handleOperator(event.target.textContent);
+                return;
+            }
+
+            if (event.target.textContent === 'AC') {
+                resetCalculator();
+                return;
+            }
+
+            if (event.target.textContent === '±') {
+                toggleSign();
+                return;
+            }
+
+            if (event.target.textContent === '%') {
+                percentage();
+                return;
+            }
+        });
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <button id="toggleHighlightBtn">Button</button>
+        <div class="box" style="width: 100px;padding: 20px; background-color: gray;">This is a box</div>
+    </div>
+
+    <script>
+        let toggleColor = true;
+        function toggleHighlight() {
+            let button = document.getElementById("toggleHighlightBtn");
+            button.addEventListener('click',() => {
+                if (toggleColor) {
+                    document.querySelector(".box").style.backgroundColor= 'yellow';
+                } else {
+                    document.querySelector(".box").style.backgroundColor= 'gray';
+                }
+                toggleColor = !toggleColor;
+            });
+        }
+        toggleHighlight();
+    </script>
+</body>
+</html>

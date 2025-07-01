@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Registration Form</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #333;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        input[type="tel"],
+        input[type="date"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        .radio-group,
+        .checkbox-group {
+            margin: 10px 0;
+        }
+
+        .radio-group label,
+        .checkbox-group label {
+            display: inline;
+            margin-right: 15px;
+            font-weight: normal;
+        }
+
+        .error {
+            color: red;
+            font-size: 14px;
+            margin-top: 5px;
+            display: none;
+        }
+
+        .invalid {
+            border-color: red !important;
+        }
+
+        button {
+            background: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+        }
+
+        button:hover {
+            background: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>User Registration</h1>
+        <form id="registrationForm">
+            <div class="form-group">
+                <label for="fullName">Full Name *</label>
+                <input  type="text" id="fullName" name="fullName" >
+                <div class="error" id="fullNameError"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email *</label>
+                <input type="email" id="email" name="email" >
+                <div class="error" id="emailError"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password *</label>
+                <input type="password" id="password" name="password" >
+                <div class="error" id="passwordError"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="confirmPassword">Confirm Password *</label>
+                <input type="password" id="confirmPassword" name="confirmPassword" >
+                <div class="error" id="confirmPasswordError"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Phone Number *</label>
+                <input type="tel" id="phone" name="phone" >
+                <div class="error" id="phoneError"></div>
+            </div>
+
+            <div class="form-group">
+                <label>Gender *</label>
+                <div class="radio-group">
+                    <input type="radio" id="male" name="gender" value="male" >
+                    <label for="male">Male</label>
+                    <input type="radio" id="female" name="gender" value="female">
+                    <label for="female">Female</label>
+                    <input type="radio" id="other" name="gender" value="other">
+                    <label for="other">Other</label>
+                </div>
+                <div class="error" id="genderError"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="dob">Date of Birth *</label>
+                <input type="date" id="dob" name="dob" >
+                <div class="error" id="dobError"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="country">Country *</label>
+                <select id="country" name="country" >
+                    <option value="">Select a country</option>
+                    <option value="us">United States</option>
+                    <option value="uk">United Kingdom</option>
+                    <option value="ca">Canada</option>
+                    <option value="au">Australia</option>
+                </select>
+                <div class="error" id="countryError"></div>
+            </div>
+
+            <div class="form-group">
+                <label>Hobbies *</label>
+                <div class="checkbox-group">
+                    <input type="checkbox" id="reading" name="hobbies" value="reading">
+                    <label for="reading">Reading</label>
+                    <input type="checkbox" id="sports" name="hobbies" value="sports">
+                    <label for="sports">Sports</label>
+                    <input type="checkbox" id="music" name="hobbies" value="music">
+                    <label for="music">Music</label>
+                </div>
+                <div class="error" id="hobbiesError"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="profilePic">Profile Picture</label>
+                <input type="file" id="profilePic" name="profilePic" accept=".jpg,.jpeg,.png">
+                <div class="error" id="profilePicError"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="bio">Bio / About You</label>
+                <textarea id="bio" name="bio" maxlength="300" rows="4"></textarea>
+                <div class="error" id="bioError"></div>
+            </div>
+
+            <button type="submit">Register</button>
+        </form>
+    </div>
+
+    <script>
+        function showError(elementId, message) {
+            console.log("showError gọi với id:", elementId, "msg:", message);
+            const el = document.getElementById(elementId);
+            el.textContent = message;
+            el.style.display = 'block';
+
+            const errorElement = document.getElementById(elementId);
+            errorElement.textContent = message;
+            errorElement.style.display = 'block';
+        }
+
+        function hideError(elementId) {
+            const errorElement = document.getElementById(elementId);
+            errorElement.style.display = 'none';
+        }
+
+        function calculateAge(birthDate) {
+            const today = new Date();
+            let age = today.getFullYear() - birthDate.getFullYear();
+            const monthDiff = today.getMonth() - birthDate.getMonth();
+            if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {
+                age--;
+            }
+            return age;
+        }
+    window.onload = function() {
+        const form = document.getElementById('registrationForm');
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            let isValid = true;
+
+            // Full Name validation
+            const fullName = document.getElementById('fullName');
+            if (fullName.value.trim().length < 3) {
+                showError('fullNameError', 'Name is required and must be at least 3 characters long');
+                fullName.classList.add('invalid');
+                isValid = false;
+            } else {
+                hideError('fullNameError');
+                fullName.classList.remove('invalid');
+            }
+
+            // Email validation
+            const email = document.getElementById('email');
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!email.value || !emailRegex.test(email.value)) {
+                showError('emailError', 'Valid email address is required');
+                email.classList.add('invalid');
+                isValid = false;
+            } else {
+                hideError('emailError');
+                email.classList.remove('invalid');
+            }
+
+            // Password validation
+            const password = document.getElementById('password');
+            const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
+            if (!password.value || !passwordRegex.test(password.value)) {
+                showError('passwordError', 'Password is required and must be at least 8 characters with letters and numbers');
+                password.classList.add('invalid');
+                isValid = false;
+            } else {
+                hideError('passwordError');
+                password.classList.remove('invalid');
+            }
+
+            // Confirm Password validation
+            const confirmPassword = document.getElementById('confirmPassword');
+            if (!confirmPassword.value || confirmPassword.value !== password.value) {
+                showError('confirmPasswordError', 'Passwords must match');
+                confirmPassword.classList.add('invalid');
+                isValid = false;
+            } else {
+                hideError('confirmPasswordError');
+                confirmPassword.classList.remove('invalid');
+            }
+
+            // Phone validation
+            const phone = document.getElementById('phone');
+            const phoneRegex = /^\d{10,}$/;
+            if (!phone.value || !phoneRegex.test(phone.value)) {
+                showError('phoneError', 'Phone number is required with at least 10 digits');
+                phone.classList.add('invalid');
+                isValid = false;
+            } else {
+                hideError('phoneError');
+                phone.classList.remove('invalid');
+            }
+
+            // Gender validation
+            const genderInputs = document.querySelectorAll('input[name="gender"]');
+            let genderSelected = false;
+            genderInputs.forEach(input => {
+                if (input.checked) genderSelected = true;
+            });
+            if (!genderSelected) {
+                showError('genderError', 'Please select a gender');
+                isValid = false;
+            } else {
+                hideError('genderError');
+            }
+
+            // Date of Birth validation
+            const dob = document.getElementById('dob');
+            if (!dob.value) {
+                showError('dobError', 'Date of birth is required');
+                dob.classList.add('invalid');
+                isValid = false;
+            } else {
+                const age = calculateAge(new Date(dob.value));
+                if (age < 18) {
+                    showError('dobError', 'You must be at least 18 years old');
+                    dob.classList.add('invalid');
+                    isValid = false;
+                } else {
+                    hideError('dobError');
+                    dob.classList.remove('invalid');
+                }
+            }
+
+            // Country validation
+            const country = document.getElementById('country');
+            if (!country.value) {
+                showError('countryError', 'Please select a country');
+                country.classList.add('invalid');
+                isValid = false;
+            } else {
+                hideError('countryError');
+                country.classList.remove('invalid');
+            }
+
+            // Hobbies validation
+            const hobbies = document.querySelectorAll('input[name="hobbies"]:checked');
+            if (hobbies.length === 0) {
+                showError('hobbiesError', 'Please select at least one hobby');
+                isValid = false;
+            } else {
+                hideError('hobbiesError');
+            }
+
+            // Profile picture validation
+            const profilePic = document.getElementById('profilePic');
+            if (profilePic.files.length > 0) {
+                const fileName = profilePic.files[0].name.toLowerCase();
+                if (!fileName.endsWith('.jpg') && !fileName.endsWith('.jpeg') && !fileName.endsWith('.png')) {
+                    showError('profilePicError', 'Please select a .jpg, .jpeg, or .png file');
+                    profilePic.classList.add('invalid');
+                    isValid = false;
+                } else {
+                    hideError('profilePicError');
+                    profilePic.classList.remove('invalid');
+                }
+            }
+
+            // Bio validation
+            const bio = document.getElementById('bio');
+            if (bio.value.length > 300) {
+                showError('bioError', 'Bio cannot exceed 300 characters');
+                bio.classList.add('invalid');
+                isValid = false;
+            } else {
+                hideError('bioError');
+                bio.classList.remove('invalid');
+            }
+
+            if (isValid) {
+                alert('Form submitted successfully!');
+                this.reset();
+            }
+        });         
+    }
+        
+    </script>
+</body>
+</html>

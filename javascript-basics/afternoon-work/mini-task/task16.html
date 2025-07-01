@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="addBoxBtn">Add Box</button>
+    <div id="boxContainer"></div>
+
+    <script>
+        function addBox() {
+            let button = document.getElementById('addBoxBtn');
+            let container = document.getElementById('boxContainer');
+
+            button.addEventListener('click', () => {
+                const box = document.createElement('div');
+                box.className = 'box';
+                box.style.backgroundColor = `rgb(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255})`;
+                box.style.width = '100px';
+                box.style.height = '100px';
+                box.style.margin = '10px';
+                box.style.display = 'inline-block';
+                container.appendChild(box);
+            });
+        }
+        addBox();
+    </script>
+</body>
+</html>

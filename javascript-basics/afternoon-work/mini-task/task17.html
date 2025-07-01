@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .completed {
+            text-decoration: line-through;
+        }
+    </style>
+</head>
+<body>
+    <ul id="todoList">
+        <li>Tắm</li>
+        <li>Ngủ</li>
+        <li>Gym</li>
+        <li>Ăn</li>
+    </ul>
+
+    <script>
+        const todoList = document.getElementById('todoList');
+        
+        todoList.addEventListener('click', function(event) {
+            if (event.target.tagName === 'LI') {
+                event.target.classList.toggle('completed');
+            }
+        });
+    </script>
+</body>
+</html>

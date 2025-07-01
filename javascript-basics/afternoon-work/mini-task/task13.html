@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="nameInput">
+    <button id="formSubmit">Submit</button>
+    <p id="nameError"></p>
+   
+   <script>
+        let button = document.getElementById('formSubmit')
+        let input = document.getElementById('nameInput')
+        let message = document.getElementById('nameError')
+        function fieldError() {
+            
+
+            if(input.value.length == 0) {
+                input.style.border = '1px solid red';
+                message.innerHTML = 'Please input your name'
+            } else {
+                input.style.border = '1px solid black';
+                message.innerHTML = ''
+            }
+        }
+        button.addEventListener('click', () => {
+            fieldError();
+        })
+        
+    </script>
+</body>
+</html>

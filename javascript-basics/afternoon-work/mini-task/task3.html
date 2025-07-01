@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <input type="text" placeholder="input" id="itemInput">
+        <button id="addItemBtn">Button</button>
+    </div>
+    <div class="container">
+        <ul id="itemList">
+            <li>item 1</li>
+            <li>item 2</li>
+        </ul>
+    </div>
+
+    <script>
+        function addItem() {
+            let button = document.getElementById("addItemBtn");
+            let input = document.getElementById("itemInput");
+            let list = document.getElementById("itemList");
+
+            button.addEventListener('click', () => {
+                let newItem = document.createElement("li");
+                newItem.innerText = input.value;
+                list.appendChild(newItem);
+            });
+        }
+
+        addItem();
+    </script>
+</body>
+</html>

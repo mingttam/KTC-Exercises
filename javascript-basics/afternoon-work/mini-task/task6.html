@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div class="container">
+        <input id="usernameInput" type="text">
+        <button id="submitUsername">Submit</button>
+    </div>
+
+    <script>
+        function submit() {
+            let button = document.getElementById("submitUsername");
+            let input = document.getElementById("usernameInput");
+            
+            button.addEventListener('click', () => {
+                const inputValue = input.value;
+                alert(inputValue)
+            })
+            }
+            submit();
+    </script>
+</body>
+</html>
