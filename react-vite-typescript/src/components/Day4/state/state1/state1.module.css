@@ -1,0 +1,28 @@
+
+.attributes {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 30px 20px;;
+}
+
+.attr_name {
+  font-weight: bold;
+  color: #333;
+  margin-right: 8px;
+}
+
+.attr_value {
+  background: #f3f3f3;
+  color: #222;
+  padding: 4px 12px;
+  margin-right: 4px;
+  font-size: 0.95em;
+  border: 1px solid #e0e0e0;
+  transition: background 0.2s;
+}
+
+.active{
+    border: 1px solid #f80;
+    color: #f80;
+}

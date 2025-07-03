@@ -1,0 +1,52 @@
+.thumbItem {
+    background: #f3f3f3;
+    color: #222;
+    margin-right: 4px;
+    font-size: 0.95em;
+    border: 1px solid #000000;
+    transition: background 0.2s;
+    height: 60px;
+    width: 60px;
+    display: inline-block;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}
+
+.active {
+    border: 2px solid #f80;
+}
+
+.thumbImg {
+    height: 100%;
+    width: 100%;
+}
+
+.slideImg {
+    height: 400px;
+    width: 400px;
+}
+.slide {
+    position: relative;
+}
+.navButton {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer; 
+}
+
+.navButtonLeft {
+    position: absolute;
+    top: 50%;
+    left: -40px;
+    transform: translateY(-50%);
+    cursor: pointer; 
+}
+
+.slideContainer {
+    margin-left: 50px;
+    display: inline-block;
+    align-items: center;
+    justify-content: center;
+}

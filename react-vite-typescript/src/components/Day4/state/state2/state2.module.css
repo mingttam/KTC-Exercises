@@ -1,0 +1,19 @@
+
+.rating_text {
+  font-weight: bold;
+  color:white;
+  margin-left: 12px;
+  background-color: green;
+  padding: 6px;
+  
+}
+
+.rating_container {
+  display: flex;
+  align-items: center;
+  margin: 30px 30px;
+}
+
+
+
+
