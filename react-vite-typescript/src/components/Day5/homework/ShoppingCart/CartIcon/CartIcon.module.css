@@ -1,0 +1,39 @@
+.cart-icon {
+  position: relative;
+  cursor: pointer;
+  padding: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  transition: all 0.2s;
+  user-select: none;
+}
+
+.cart-icon:hover {
+  background: #f8f9fa;
+  border-color: #2c5aa0;
+}
+
+.cart-icon-symbol {
+  font-size: 1.5rem;
+}
+
+.cart-count {
+  background: #ff4444;
+  color: white;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: bold;
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  min-width: 24px;
+} 
