@@ -6,19 +6,21 @@
 // import SlidewThumbs from "./components/Day4/homework/slidewThumbs/slidewThumbs.tsx";
 // import ButtonTabs from "./components/Day4/homework/buttonTabs/buttonTabs.tsx";
 // import ButtonAccordtion from "./components/Day4/homework/buttonAccordtion/buttonAccordtion";
-import ClickedCounter from "./components/Day5/Exercises/Ex1-ClickedCounter/clickedCounter.tsx";
-import InputTracker from "./components/Day5/Exercises/Ex2-InputTracker/inputTracker.tsx";
-import ToggleSwitch from "./components/Day5/Exercises/Ex3-ToggleSwitch/ToggleSwitch.tsx";
-import HoverHighlight from "./components/Day5/Exercises/Ex4-HoverHighlight/HoverHighlight.tsx";
-import FormSubmissionAlert from "./components/Day5/Exercises/Ex5-FormSubmissionAlert/FormSubmissionAlert.tsx";
-import KeyPressDisplay from "./components/Day5/Exercises/Ex6-KeyPressDisplay/KeyPressDisplay.tsx";
-import DoubleClickMessage from "./components/Day5/Exercises/Ex7-DoubleClickMessage/DoubleClickMessage.tsx";
-import DropdownSelection from "./components/Day5/Exercises/Ex8-DropdownSelection/DropdownSelection.tsx";
-import CheckboxToggle from "./components/Day5/Exercises/Ex9-CheckboxToggle/CheckboxToggle.tsx";
-import SearchFilter from "./components/Day5/Exercises/Ex10-SearchFilter/SearchFilter.tsx";
-import Calculator from "./components/Day5/homework/Calculator/Calculator.tsx";
-import RegistrationForm from "./components/Day5/homework/RegistrationForm/RegistrationForm.tsx";
-import { ShoppingCart } from "./components/Day5/homework/ShoppingCart/index.tsx";
+// import ClickedCounter from "./components/Day5/Exercises/Ex1-ClickedCounter/clickedCounter.tsx";
+// import InputTracker from "./components/Day5/Exercises/Ex2-InputTracker/inputTracker.tsx";
+// import ToggleSwitch from "./components/Day5/Exercises/Ex3-ToggleSwitch/ToggleSwitch.tsx";
+// import HoverHighlight from "./components/Day5/Exercises/Ex4-HoverHighlight/HoverHighlight.tsx";
+// import FormSubmissionAlert from "./components/Day5/Exercises/Ex5-FormSubmissionAlert/FormSubmissionAlert.tsx";
+// import KeyPressDisplay from "./components/Day5/Exercises/Ex6-KeyPressDisplay/KeyPressDisplay.tsx";
+// import DoubleClickMessage from "./components/Day5/Exercises/Ex7-DoubleClickMessage/DoubleClickMessage.tsx";
+// import DropdownSelection from "./components/Day5/Exercises/Ex8-DropdownSelection/DropdownSelection.tsx";
+// import CheckboxToggle from "./components/Day5/Exercises/Ex9-CheckboxToggle/CheckboxToggle.tsx";
+// import SearchFilter from "./components/Day5/Exercises/Ex10-SearchFilter/SearchFilter.tsx";
+// import Calculator from "./components/Day5/homework/Calculator/Calculator.tsx";
+// import RegistrationForm from "./components/Day5/homework/RegistrationForm/RegistrationForm.tsx";
+// import { ShoppingCart } from "./components/Day5/homework/ShoppingCart/index.tsx";
+import Products from "./components/Day6/afternoon-work-CRUD/index.tsx";
+import WeatherApp from "./components/Day6/homework/index";
 // const RenderList01Data = [
 //   {
 //     id: 1,
@@ -144,6 +146,9 @@ import { ShoppingCart } from "./components/Day5/homework/ShoppingCart/index.tsx"
 function App() {
   return (
     <>
+      <WeatherApp />
+      <Products />
+
       {/* <div
         style={{
           display: "flex",
@@ -219,7 +224,7 @@ function App() {
       <ButtonTabs data={buttonTabsData} />
 
       <ButtonAccordtion data={buttonTabsData} /> 
-      */}
+      
 
       <ClickedCounter />
 
@@ -248,6 +253,7 @@ function App() {
       <RegistrationForm />
 
       <ShoppingCart />
+      */}
     </>
   );
 }
