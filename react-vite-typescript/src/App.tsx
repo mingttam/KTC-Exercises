@@ -19,8 +19,8 @@
 // import Calculator from "./components/Day5/homework/Calculator/Calculator.tsx";
 // import RegistrationForm from "./components/Day5/homework/RegistrationForm/RegistrationForm.tsx";
 // import { ShoppingCart } from "./components/Day5/homework/ShoppingCart/index.tsx";
-import Products from "./components/Day6/afternoon-work-CRUD/index.tsx";
-import WeatherApp from "./components/Day6/homework/index";
+// import Products from "./components/Day6/afternoon-work-CRUD/index.tsx";
+// import WeatherApp from "./components/Day6/homework/index";
 // const RenderList01Data = [
 //   {
 //     id: 1,
@@ -146,10 +146,10 @@ import WeatherApp from "./components/Day6/homework/index";
 function App() {
   return (
     <>
-      <WeatherApp />
+      {/*<WeatherApp />
       <Products />
 
-      {/* <div
+       <div
         style={{
           display: "flex",
           flexDirection: "column",
