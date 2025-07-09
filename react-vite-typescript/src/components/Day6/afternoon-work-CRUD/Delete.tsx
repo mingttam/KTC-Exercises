@@ -1,5 +1,3 @@
-import React from "react";
-
 const url = "https://api.escuelajs.co/api/v1/products";
 
 type Props = {
