@@ -1,12 +1,7 @@
-import Day7Homework from "./components/Day7/Homework";
-import Day77 from "./components/Day7/Afternoon-work";
+import Day8Afternoon from "./components/Day8/afternoon";
+
 function App() {
-  return (
-    <>
-      <Day7Homework />
-      <Day77 />
-    </>
-  );
+  return <Day8Afternoon />;
 }
 
 export default App;
