@@ -1,11 +1,9 @@
-import Day8Afternoon from "./components/Day8/afternoon";
-import UserRegistrationForm from "./components/Day8/homework/UserRegistrationForm";
+import TaskManager from "./components/TaskManager";
 
 function App() {
   return (
     <>
-      <Day8Afternoon />
-      <UserRegistrationForm />
+      <TaskManager />
     </>
   );
 }
