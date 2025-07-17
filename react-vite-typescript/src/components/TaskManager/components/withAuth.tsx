@@ -1,5 +1,5 @@
 import React from "react";
-import { Navigate } from "react-router";
+import { Navigate } from "react-router-dom";
 import { useAuthStore } from "../auth.store";
 
 const withAuth = <P extends object>(Component: React.ComponentType<P>) => {

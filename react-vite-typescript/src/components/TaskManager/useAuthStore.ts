@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import type { NavigateFunction } from 'react-router';
+import type { NavigateFunction } from 'react-router-dom';
 import { create } from 'zustand';
 import { devtools, persist } from 'zustand/middleware';
 
