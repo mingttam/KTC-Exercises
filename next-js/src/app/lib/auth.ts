@@ -94,8 +94,12 @@ export const authOptions: NextAuthOptions  = {
 };
 
 declare module "next-auth" {
-  // eslint-disable-next-line @typescript-eslint/no-empty-object-type
-  interface User extends UserType {}
+  interface User {
+    id: string;
+    name: string;
+    email: string;
+    accessToken: string;
+  }
 }
 
 declare module "next-auth" {
@@ -107,8 +111,12 @@ declare module "next-auth" {
 }
 
 declare module "next-auth/jwt" {
-  // eslint-disable-next-line @typescript-eslint/no-empty-object-type
-  interface JWT extends UserType {}
+  interface JWT {
+    id: string;
+    name: string;
+    email: string;
+    accessToken: string;
+  }
 }
 
 export default NextAuth(authOptions);

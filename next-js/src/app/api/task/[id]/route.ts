@@ -3,8 +3,7 @@ import { getServerSession } from "next-auth";
 import { NextResponse } from "next/server";
 
 // /api/tasks get
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-export async function GET(request: Request, res: Response) {
+export async function GET() {
   const session = await getServerSession(authOptions);
   console.log('<<=== 🚀 session ===>>',session);
 
@@ -36,8 +35,7 @@ export async function GET(request: Request, res: Response) {
         data
     });
 
-   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-   } catch (error) {
+   } catch {
      return new NextResponse(
       JSON.stringify({ status: "error", message: "An error occurred" }),
       { status: 500 }
@@ -52,8 +50,7 @@ export async function GET(request: Request, res: Response) {
 export async function POST(request: Request) {
   //1. check session
   //2. check body
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const body = await request.json();
+  await request.json(); // Parse body but don't assign if not using it yet
   //3. call api
   //4. return response
 }
