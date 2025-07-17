@@ -1,5 +1,5 @@
 import React from "react";
-import { Navigate } from "react-router";
+import { Navigate } from "react-router-dom";
 import { hasPermissions, hasAnyRoles, isAllowAccessForRoles } from "../auth.util";
 import { useAuthStore } from "../auth.store";
 import type { PermissionCheckMode } from "../auth.type";
