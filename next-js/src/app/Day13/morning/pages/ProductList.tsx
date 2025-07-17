@@ -25,7 +25,7 @@ const Products = ({ products }: { products: IProductListProps[] }) => {
           <h2 className="text-lg font-semibold">{product.title}</h2>
           <p className="text-gray-600">Price: ${product.price}</p>
           <Image
-            src={product.images[0]}
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3vrTUU3CKbUDThpm8aZzFXdTmai6PodNfXA&s"
             alt={product.title}
             width={200}
             height={200}
