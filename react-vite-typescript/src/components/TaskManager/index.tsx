@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from "react-router";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import AccessDenied from "./pages/AccessDenied";
 import Login from "./pages/Login";
 import AssigneeMe from "./pages/AssigneeMe";

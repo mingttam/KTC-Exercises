@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { useNavigate, useLocation } from "react-router";
+import { useNavigate, useLocation } from "react-router-dom";
 import { LoginContext } from "../context";
 import LogOut from "./LogOut";
 
