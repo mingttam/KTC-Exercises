@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { useForm } from "react-hook-form";
-import { useLocation, useNavigate, useParams } from "react-router";
+import { useLocation, useNavigate, useParams } from "react-router-dom";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 
